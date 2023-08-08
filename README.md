@@ -1,1 +1,32 @@
-# Sublime_build_system
+# Sublime Build System
+
+## Java
+{ 
+"target": "terminus_exec",
+"cancel": "terminus_cancel_build",
+"shell_cmd": "javac $file && java $file_base_name<inp.in>out.in",
+"working_dir": "$file_path"
+}
+
+## Python
+
+{
+  "cmd" : ["python3 $file_name -o $file_base_name 4s ./$file_base_name<inp.in>out.in"], 
+  "selector" : "source.py",
+  "shell": true,
+  "working_dir" : "$file_path"
+}
+
+## C++
+{
+  "cmd" : ["g++-10 $file_name -o $file_base_name &&  ./$file_base_name<inp.in>out.in"], 
+  "selector" : "source.c,source.cpp",
+  "shell": true,
+  "working_dir" : "$file_path"
+}
+## RUST
+{ 
+"target": "terminus_exec",
+"shell_cmd": "rustc $file  -o $file_base_name &&  ./$file_base_name<inp.in>out.in",
+"working_dir": "$file_path"
+}
