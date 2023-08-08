@@ -30,3 +30,12 @@
 "shell_cmd": "rustc $file  -o $file_base_name &&  ./$file_base_name<inp.in>out.in",
 "working_dir": "$file_path"
 }
+
+
+## C
+{
+  "cmd" : ["gcc  $file_name -o $file_base_name &&  ./$file_base_name<inp.in>out.in"], 
+  "selector" : "source.c,source.cpp",
+  "shell": true,
+  "working_dir" : "$file_path"
+}
