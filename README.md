@@ -1,4 +1,4 @@
-# Sublime Build System
+# Sublime Build System Tool
 
 ## Java
 { 
