@@ -24,6 +24,8 @@
   "shell": true,
   "working_dir" : "$file_path"
 }
+
+//
 ## RUST
 { 
 "target": "terminus_exec",
@@ -38,4 +40,14 @@
   "selector" : "source.c,source.cpp",
   "shell": true,
   "working_dir" : "$file_path"
+}
+
+
+## Windows CPP
+{
+"cmd": ["g++.exe","-std=c++14", "${file}", "-o", "${file_base_name}", "&&" , "${file_base_name}<inp.in>out.in"],
+"selector":"source.cpp",
+"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+"shell":true,
+"working_dir":"$file_path"
 }
