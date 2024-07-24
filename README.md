@@ -19,11 +19,15 @@
 
 ## C++
 {
-  "cmd" : ["g++-10 $file_name -o $file_base_name &&  ./$file_base_name<inp.in>out.in"], 
-  "selector" : "source.c,source.cpp",
+  "cmd": [
+    "g++ $file_name -o ../Target/$file_base_name && cd ../Target/ && ./$file_base_name < inp.in > out.in"
+  ],
+  "selector": "source.c,source.cpp",
   "shell": true,
-  "working_dir" : "$file_path"
+  "working_dir": "$file_path"
 }
+
+
 
 //
 ## RUST
