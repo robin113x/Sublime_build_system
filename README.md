@@ -31,11 +31,15 @@
 
 //
 ## RUST
-{ 
-"target": "terminus_exec",
-"shell_cmd": "rustc $file  -o $file_base_name &&  ./$file_base_name<inp.in>out.in",
-"working_dir": "$file_path"
+{
+  "cmd": [
+    "rustc $file -o ../Target/$file_base_name && cd ../Target/ && ./$file_base_name < inp.in > out.in"
+  ],
+  "selector": "source.rs",
+  "shell": true,
+  "working_dir": "$file_path"
 }
+
 
 
 ## C
